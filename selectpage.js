@@ -671,7 +671,7 @@
             } else {//ajax data source mode to init selected item
                 $.ajax({
                     dataType: 'json',
-                    type: 'POST',
+                    type: p.type ? p.type : 'POST',
                     url: p.data,
                     data: {
                         searchTable: p.dbTable,
@@ -1262,7 +1262,7 @@
         self.prop.xhr = $.ajax({
             dataType: 'json',
             url: p.data,
-            type: 'POST',
+            type: p.type ? p.type : 'POST',
             data: _params,
             success: function (returnData) {
                 if (!returnData || !$.isPlainObject(returnData)) {
